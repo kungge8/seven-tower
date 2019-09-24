@@ -17,29 +17,38 @@ import {
 } from 'react-native';
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Story from './Components/Story.js';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './Reducers';
 
-const App = () => {
-  return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Story />
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
-  );
-};
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
+import Story from './Components/Story.js';
+import Library from './Components/Library.js';
+
+const MainNavigator = createStackNavigator({
+  Home: { screen: Library },
+  Story: { screen: Story }
+})
+
+let Navigation = createAppContainer(MainNavigator);
+// const App = createAppContainer(MainNavigator);
+
+class App extends React.Component {
+  render (){
+    return (
+      <Provider store = {createStore(reducer)}>
+        <Navigation>
+          <Library />
+        </Navigation>
+      </Provider>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   scrollView: {
