@@ -22,26 +22,29 @@ import {
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducer from './Reducers';
+import store from './store';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Story from './Components/Story.js';
 import Library from './Components/Library.js';
+import AddBook from './Components/AddBook.js';
+import RemoveBook from './Components/removeBook.js';
 
 const MainNavigator = createStackNavigator({
   Home: { screen: Library },
-  Story: { screen: Story }
+  Story: { screen: Story },
+  AddBook: { screen: AddBook },
+  RemoveBook: { screen: RemoveBook }
 })
 
 let Navigation = createAppContainer(MainNavigator);
-// const App = createAppContainer(MainNavigator);
 
 class App extends React.Component {
   render (){
     return (
-      <Provider store = {createStore(reducer)}>
+      <Provider store = {store}>
         <Navigation>
           <Library />
         </Navigation>
