@@ -11,6 +11,7 @@ export function getAllBooks (books){
 }
 
 export const newBook = (book) => dispatch => {
+	// console.log("ADDBOOK RUN");
 	return dispatch({
 		type: ADD_BOOK,
 		book
@@ -18,6 +19,7 @@ export const newBook = (book) => dispatch => {
 }
 
 export const deleteBook = (book) => dispatch => {
+	// console.log("DELETEBOOK RUN");
 	return dispatch({
 		type: REMOVE_BOOK,
 		book

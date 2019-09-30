@@ -13,7 +13,14 @@ class RemoveBook extends Component {
 				<ScrollView style = { styles.sectionContainer }>
 					{
 						this.props.books.map((n) => {
-							RemoveBookButton({book: n , deleteBook: deleteBook});
+							return (
+								<RemoveBookButton 
+									key = { n }
+									book = { n }
+									deleteBook = { deleteBook }
+									navigation = {this.props.navigation}
+								/>
+							);
 						})
 					}
 				</ScrollView>

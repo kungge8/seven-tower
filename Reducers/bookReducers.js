@@ -22,9 +22,10 @@ export default function(state = initialState, action){
 			}
 
 		case REMOVE_BOOK:
+			// console.log("REDUCER CASE REMOVE_BOOK");
 			return {
 				...state,
-				books: state.books.filter((n) => n != book)
+				books: state.books.filter((n) => n != action.book)
 			}
 
 		default:

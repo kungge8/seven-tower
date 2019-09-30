@@ -1,21 +1,25 @@
 import React from 'react';
-import { Button } from 'react-native';
+import { View, Button, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { deleteBook } from '../Actions';
 
-const bookButton = (props) => {
-	console.log("Remove Book Button");
+
+const BookButton = (props) => {
+
+	const book = props.book;
 
 	const handleSubmit = () => {
-		props.deleteBook(props.book);
+		// console.log("BB HANDLESUBMIT");
+		props.deleteBook(book);
 		props.navigation.goBack();
 	}
 
 	return (
 		<Button
-			key = { props.book }
-			title = { props.book }
+			title = { book }
 			onPress = { handleSubmit }
 		/>
 	);
 };
 
-export default bookButton;
+export default connect ( null, { deleteBook } )(BookButton);

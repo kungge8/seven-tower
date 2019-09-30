@@ -30,7 +30,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Story from './Components/Story.js';
 import Library from './Components/Library.js';
 import AddBook from './Components/AddBook.js';
-import RemoveBook from './Components/removeBook.js';
+import RemoveBook from './Components/RemoveBook.js';
 
 const MainNavigator = createStackNavigator({
   Home: { screen: Library },
