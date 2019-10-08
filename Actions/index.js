@@ -2,8 +2,9 @@ export const GET_BOOKS = 'GET_BOOKS';
 export const READ_BOOK = 'READ_BOOK';
 export const ADD_BOOK = 'ADD_BOOK';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
+export const GET_CATALOG = 'GET_CATALOG';
 
-export function getAllBooks (books){
+export function getBooks (books){
 	return {
 		type: GET_BOOKS,
 		books
@@ -24,4 +25,15 @@ export const deleteBook = (book) => dispatch => {
 		type: REMOVE_BOOK,
 		book
 	});
+}
+
+export const getCatalog = () => dispatch => {
+	fetch("https://jsonplaceholder.typicode.com/posts")
+	.then(res => res.json())
+	.then(catalog =>
+		dispatch({
+			type: GET_CATALOG,
+			catalog
+		})
+	);
 }

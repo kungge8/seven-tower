@@ -11,20 +11,21 @@ class Library extends Component {
 					{
 						this.props.books.map((book) => (
 							<Button
-								key = { book }
-								title = { book }
-								onPress = {() => this.props.navigation.navigate("Story", { book: book })}
+								key = { book.title }
+								title = { book.title }
+								book = { book }
+								onPress = { () => this.props.navigation.navigate("Story") }
 							/>
 						))
 					}
 				</ScrollView>
 				<Button
-					title = 'Add Book'
-					onPress = {() => this.props.navigation.navigate("AddBook")}
+					title = 'Remove Book'
+					onPress = { () => this.props.navigation.navigate("RemoveBook") }
 				/>
 				<Button
-					title = 'Remove Book'
-					onPress = {() => this.props.navigation.navigate("RemoveBook")}
+					title = 'Shop'
+					onPress = { () => this.props.navigation.navigate("Shop") }
 				/>
 			</View>
 		)		

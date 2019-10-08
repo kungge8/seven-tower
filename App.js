@@ -31,12 +31,14 @@ import Story from './Components/Story.js';
 import Library from './Components/Library.js';
 import AddBook from './Components/AddBook.js';
 import RemoveBook from './Components/RemoveBook.js';
+import Shop from './Components/Shop.js';
 
 const MainNavigator = createStackNavigator({
   Home: { screen: Library },
   Story: { screen: Story },
   AddBook: { screen: AddBook },
-  RemoveBook: { screen: RemoveBook }
+  RemoveBook: { screen: RemoveBook },
+  Shop: { screen: Shop }
 })
 
 let Navigation = createAppContainer(MainNavigator);

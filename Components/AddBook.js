@@ -43,7 +43,7 @@ class AddBook extends Component {
 	}
 }
 
-export default connect( null , { newBook })(AddBook);
+export default connect(null , { newBook })( AddBook );
 
 const styles = StyleSheet.create({
 	textInput: {

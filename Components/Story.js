@@ -5,7 +5,7 @@ class Story extends Component {
 	render(){
 		return (
 			<View>
-				<Text>THIS IS BOOK {this.props.navigation.getParam('book', 'default')}</Text>
+				<Text>THIS IS BOOK { this.props.title }</Text>
 			</View>
 		)
 	}

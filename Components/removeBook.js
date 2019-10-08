@@ -18,7 +18,7 @@ class RemoveBook extends Component {
 									key = { n }
 									book = { n }
 									deleteBook = { deleteBook }
-									navigation = {this.props.navigation}
+									navigation = { this.props.navigation }
 								/>
 							);
 						})
@@ -33,7 +33,7 @@ const mapStateToProps = (state) => ({
 	books: state.book.books
 }); 
 
-export default connect( mapStateToProps, { deleteBook } )(RemoveBook);
+export default connect(mapStateToProps, { deleteBook })(RemoveBook);
 
 const styles = StyleSheet.create({
 	sectionContainer: {
