@@ -3,6 +3,7 @@ export const READ_BOOK = 'READ_BOOK';
 export const ADD_BOOK = 'ADD_BOOK';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const GET_CATALOG = 'GET_CATALOG';
+export const SET_CURRENT_BOOK = 'SET_CURRENT_BOOK';
 
 export function getBooks (books){
 	return {
@@ -17,6 +18,13 @@ export const newBook = (book) => dispatch => {
 		type: ADD_BOOK,
 		book
 	});
+}
+
+export const currentBook = (book) => dispatch => {
+	return dispatch({
+		type: SET_CURRENT_BOOK,
+		book
+	})
 }
 
 export const deleteBook = (book) => dispatch => {

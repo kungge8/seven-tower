@@ -12,8 +12,8 @@ class Shop extends Component {
 
 	render() {
 		return (
-			<ScrollView>
-				<Text>THIS IS A SHOP</Text>
+			<ScrollView style = { styles.sectionContainer }>
+				<Text style = { styles.header }>THIS IS A SHOP</Text>
 				{
 					this.props.catalog.length === 0 ? (
 						<Text>SHOP IS LOADING</Text>
@@ -39,3 +39,16 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { getCatalog })(Shop);
+
+const styles = StyleSheet.create({
+	sectionContainer: {
+	    marginTop: 32,
+	    marginBottom: 34,
+	    paddingHorizontal: 24,
+	},
+	header: {
+		fontSize: 24,
+		fontWeight: '600',
+		textAlign: 'center'
+	}
+});

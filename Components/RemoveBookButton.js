@@ -10,14 +10,13 @@ const BookButton = (props) => {
 	const book = props.book;
 
 	const handleSubmit = () => {
-		// console.log("BB HANDLESUBMIT");
 		props.deleteBook(book);
 		props.navigation.goBack();
 	}
 
 	return (
 		<Button
-			title = { book }
+			title = { props.title }
 			onPress = { handleSubmit }
 		/>
 	);

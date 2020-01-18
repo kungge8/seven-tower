@@ -15,9 +15,8 @@ class RemoveBook extends Component {
 						this.props.books.map((n) => {
 							return (
 								<RemoveBookButton 
-									key = { n }
+									key = { n.title }
 									book = { n }
-									deleteBook = { deleteBook }
 									navigation = { this.props.navigation }
 								/>
 							);
